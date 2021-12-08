@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingsController {
     @RequestMapping(method = RequestMethod.POST, path = "/friendship")
     public ResponseEntity<String> postGreetingRoot(@RequestBody Object req) {
-        System.out.println("The following user, wants to be your friend: " + req);
-        return ResponseEntity.ok(req + " is now your friend");
+        String[] splitter = req.toString().replace("{", "").replace("}", "").replace(",", "").split(" ");
+        System.out.println("The " + splitter[0]);
+        System.out.println("This " + splitter[1] + " just added");
+        System.out.println("This " + splitter[2] + " to be friends");
+
+        return ResponseEntity.ok(req + " sadsad");
     }
 }
