@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingsController {
     @RequestMapping(method = RequestMethod.POST, path = "/friendship")
     public ResponseEntity<String> postGreetingRoot(@RequestBody Object req) {
-        System.out.println("Root request: " + req);
-        return ResponseEntity.ok("Hello from Server 2 (using post)");
+        System.out.println("The following user, wants to be your friend: " + req);
+        return ResponseEntity.ok(req + " is now your friend");
     }
 }
